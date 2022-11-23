@@ -1,0 +1,23 @@
+{
+	"extends": "marine/prettier/node",
+	"rules": {
+		"@typescript-eslint/no-throw-literal": 0,
+		"@typescript-eslint/naming-convention": 0,
+		"@typescript-eslint/restrict-template-expressions": [
+			0,
+			{
+				"allowNumber": true,
+				"allowBoolean": true
+			}
+		]
+	},
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"parserOptions": {
+		"project": "./tsconfig.eslint.json",
+        "warnOnUnsupportedTypeScriptVersion": false
+	},
+	"overrides": []
+}
