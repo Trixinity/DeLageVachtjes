@@ -3,10 +3,12 @@ import { isMessageInstance } from '@sapphire/discord.js-utilities';
 
 export class PingCommand extends Command {
 	public constructor(context: Command.Context, options: Command.Options) {
+		console.log('built ping command');
 		super(context, { ...options });
 	}
 
 	public override registerApplicationCommands(registry: ChatInputCommand.Registry) {
+		console.log('registering ping command');
 		registry.registerChatInputCommand((builder) =>
 			builder.setName('ping').setDescription('Ping bot to see if it is alive'),
 		);
