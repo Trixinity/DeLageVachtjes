@@ -8,6 +8,7 @@
     "start": "shx rm -rf ./dist/ && tsc && node dist/"
   },
   "devDependencies": {
+    "@sapphire/ts-config": "^3.3.4",
     "@types/node": "^17.0.42",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "@sapphire/framework": "^3.1.4",
+    "@sapphire/result": "^2.6.0",
     "discord-api-types": "0.33.5",
     "discord.js": "^13.12.0"
   }
