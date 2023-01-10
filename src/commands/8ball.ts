@@ -26,7 +26,7 @@ export class EightballCommand extends Command {
             'Mijn antwoord is nee.', 'Mijn bronnen zeggen van niet', 'Uitkomst lijkt niet positief', 'Ik betwijfel het.'];
 
         //We can also debate if we also make this possible to run in an DM
-        if (interaction.guild) {
+        if (!interaction.guild) {
             return interaction.reply('Je runt dit niet in een server.')
         }
         const embed = new MessageEmbed()
@@ -34,6 +34,6 @@ export class EightballCommand extends Command {
             .setColor([149, 120, 162])
 			.setFooter({text: "Bot gemaakt en beheerd door Trixinity#0164", iconURL: trixiconURL});
 
-        return interaction.reply({embeds: [embed], ephemeral: true});
+        return interaction.reply({embeds: [embed]});
     }
 }
