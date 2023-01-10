@@ -12,6 +12,8 @@ export class EditListener extends Listener<typeof Events.MessageUpdate> {
         });
     }
     public async run(oldMessage: Message, newMessage: Message) {
+        const channel_id = oldMessage.channelId;
+
         if (oldMessage.content === newMessage.content) return
         
         if (oldMessage.author.bot) return
@@ -23,7 +25,7 @@ export class EditListener extends Listener<typeof Events.MessageUpdate> {
 
         const embed = new MessageEmbed()
             .setTitle('Bericht is veranderd')
-            .setDescription('**Oud:**\n' + limitLength(oldMessage.content) + '\n\n**Nieuw:**\n' + limitLength(newMessage.content))
+            .setDescription('**Oud:**\n' + limitLength(oldMessage.content) + '\n\n**Nieuw:**\n' + limitLength(newMessage.content) + `\n\n **In het kanaal:**\n <#${channel_id}>.`)
             .setColor('#ff9933')
             .setAuthor({
                 iconURL: oldMessage.author.avatarURL() ?? undefined,

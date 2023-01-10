@@ -13,7 +13,7 @@ export function formatDate(date: Date, withTime = true): string {
     return output
 }
 
-export function limitLength(text: string, maxLength = 2000): string {
+export function limitLength(text: string, maxLength = 1900): string {
     if (text.length < maxLength) return text
 
     return text.slice(0, maxLength - 4) + ' ...'
