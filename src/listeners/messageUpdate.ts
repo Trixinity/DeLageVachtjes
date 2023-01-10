@@ -25,7 +25,7 @@ export class EditListener extends Listener<typeof Events.MessageUpdate> {
 
         const embed = new MessageEmbed()
             .setTitle('Bericht is veranderd')
-            .setDescription('**Oud:**\n' + limitLength(oldMessage.content) + '\n\n**Nieuw:**\n' + limitLength(newMessage.content) + `\n\n **In het kanaal:**\n <#${channel_id}>.`)
+            .setDescription('**Oud:**\n' + limitLength(oldMessage.content) + '\n\n**Nieuw:**\n' + limitLength(newMessage.content) + `\n\n **In het kanaal:**\n <#${channel_id}>`)
             .setColor('#ff9933')
             .setAuthor({
                 iconURL: oldMessage.author.avatarURL() ?? undefined,

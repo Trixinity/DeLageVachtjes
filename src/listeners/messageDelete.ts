@@ -23,7 +23,7 @@ export class DeleteListener extends Listener<typeof Events.MessageDelete> {
 
         let embed = new MessageEmbed()
             .setTitle('Bericht is verwijderd')
-            .setDescription('**Verwijderd bericht:**\n' + limitLength(message.content) + `\n\n **In het kanaal:**\n <#${channel_id}>. `)
+            .setDescription('**Verwijderd bericht:**\n' + limitLength(message.content) + `\n\n **In het kanaal:**\n <#${channel_id}> `)
             .setColor('#ff9933')
             .setAuthor({
                 iconURL: message.author.avatarURL() ?? undefined,
