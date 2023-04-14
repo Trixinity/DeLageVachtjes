@@ -35,7 +35,7 @@ export class CuteCommand extends Command {
 			return interaction.reply('Je runt dit niet in een server.');
 		}
 		let userToCheck = interaction.options.getUser('user', true).id;
-		if (userToCheck = '210335930706427906') {
+		if (userToCheck === '210335930706427906') {
 			return interaction.reply('We weten dat Trixi een cute klein draakje is smh.')
 		}
         const trixiconURL = "https://media.discordapp.net/attachments/462564425866412045/1035666899389919353/20210806_005557.jpg?width=466&height=466";
