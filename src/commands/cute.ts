@@ -41,7 +41,7 @@ export class CuteCommand extends Command {
         const trixiconURL = "https://media.discordapp.net/attachments/462564425866412045/1035666899389919353/20210806_005557.jpg?width=466&height=466";
 		const percentage = this.getRandomInt(101);
         const bar = this.progressBar(percentage);
-		const description = `<@${userToCheck}>, jij bent ${percentage}% schattig ${percentage <30 ? '❤️' : '💔'} \n${bar}`
+		const description = `<@${userToCheck}>, jij bent ${percentage}% schattig ${percentage <30 ? '💔' : '❤️'} \n${bar}`
         const embed = new MessageEmbed()
 			.setDescription(description)
 			.setColor([149, 120, 162])
