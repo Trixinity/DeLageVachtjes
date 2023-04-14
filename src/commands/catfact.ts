@@ -20,10 +20,6 @@ export class CatfactCommand extends Command {
 		);
 	}
     public async chatInputRun(interaction: Command.ChatInputInteraction) {
-		if (interaction.guild === null) {
-			return interaction.reply('Je runt dit niet in een server.');
-		}
-
 		const trixiconURL = "https://media.discordapp.net/attachments/462564425866412045/1035666899389919353/20210806_005557.jpg?width=466&height=466";
 		
 		const output = await fetch('https://catfact.ninja/fact', {method: 'GET'})
@@ -31,7 +27,7 @@ export class CatfactCommand extends Command {
 
 		const description = output.fact;
 
-		let embed = new MessageEmbed()
+		const embed = new MessageEmbed()
 			.setDescription(description)
 			.setColor([149, 120, 162])
 			.setFooter({text: "Bot gemaakt en beheerd door Trixinity#0164", iconURL: trixiconURL});
