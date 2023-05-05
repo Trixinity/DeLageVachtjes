@@ -35,9 +35,12 @@ export class EightballCommand extends Command {
                     'Mijn antwoord is nee.', 'Mijn bronnen zeggen van niet.', 'Uitkomst lijkt niet positief.', 'Ik betwijfel het.'];
                 
         const user = interaction.user.id;
-        let beschrijving = interaction.options.getString('description', true);
+        const beschrijving = interaction.options.getString('description', true);
         const embed = new MessageEmbed()
-            .setDescription(`<@${user}> vraagt: \n${beschrijving} \nTR1-X13 antwoordt: \n${responses[this.getRandomInt(20)]}`)
+            .setFields(
+                { name: `<@${user}> vraagt:`, value: beschrijving },
+                { name:'TR1-X13 antwoordt:', value: responses[this.getRandomInt(20)] }
+            )
             .setColor([149, 120, 162])
 			.setFooter({text: "Bot gemaakt en beheerd door Trixinity#0164", iconURL: trixiconURL});
 
