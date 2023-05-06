@@ -11,7 +11,7 @@ export async function trackBirthdays(client: Client) {
         .createQueryBuilder()
         .select()
         .where('day = :day', { day: now.getUTCDate()})
-        .andWhere('month = :month', {month: now.getUTCMonth()})
+        .andWhere('month = :month', {month: now.getUTCMonth() + 1})
         .getMany();
 
     const guild = client.guilds.resolve('1035504506366087218');
