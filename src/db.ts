@@ -5,10 +5,10 @@ async function createConnectionToDB() {
 	try {
 		const ds =  new DataSource({
 			type: 'postgres',
-			host: process.env.POSTGRES_HOST ?? 'localhost',
-			port: parseInt(process.env.POSTGRES_PORT ?? '', 10) || 5432,
-			username: process.env.POSTGRES_USERNAME ?? 'postgres',
-			password: process.env.POSTGRES_PASSWORD ?? '',
+			host: process.env.PGHOST ?? 'localhost',
+			port: parseInt(process.env.PGPORT ?? '', 10) || 5432,
+			username: process.env.PGUSER ?? 'postgres',
+			password: process.env.PGPASSWORD ?? '',
 			database: process.env.POSTGRES_DATABASE ?? 'lagevachtjes',
 			entities,
 			synchronize: true,
@@ -19,9 +19,9 @@ async function createConnectionToDB() {
 	} catch (e) {
 		console.error(
 			new Error(`Failed to connect to the database with: host: ${
-			process.env.POSTGRES_HOST
-			} port: ${process.env.POSTGRES_PORT
-			} username: ${process.env.POSTGRES_USERNAME
+			process.env.PGHOST
+			} port: ${process.env.PGPORT
+			} username: ${process.env.PGUSER
 			}`,
 			)
 		);
