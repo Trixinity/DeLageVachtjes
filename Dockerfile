@@ -11,4 +11,4 @@ COPY src src
 RUN npm install \
     && npm run-script build
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["./run.sh"]
