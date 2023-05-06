@@ -38,7 +38,7 @@ export class EightballCommand extends Command {
         const beschrijving = interaction.options.getString('description', true);
         const embed = new MessageEmbed()
             .setFields(
-                { name: `<@${user}> vraagt:`, value: beschrijving },
+                { name: `<@!${user}> vraagt:`, value: beschrijving },
                 { name:'TR1-X13 antwoordt:', value: responses[this.getRandomInt(20)] }
             )
             .setColor([149, 120, 162])
